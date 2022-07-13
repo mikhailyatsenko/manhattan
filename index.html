@@ -15,31 +15,30 @@
   </head>
 
   <body>
-    <header class="header absolute top-0 left-0 w-full z-50 text-lightbrown font-medium">
+    <header class="header absolute top-0 left-0 w-full text-lightbrown font-medium">
       <div class="container">
-        <nav class="flex justify-between items-center py-4">
-          <div class="flex items-center">
-            <div>
+        <nav class="flex justify-between items-center md:py-4">
+          <div class="flex items-center header-logo">
+            <div class="menu-logo py-2">
               <a href="#"><img src="./img/logo.png" alt="logo" /></a>
             </div>
-            <div class="text-center text-darkbrown text-2xl font-normal leading-6 px-2">
+            <div class="text-center text-darkbrown md:text-2xl text-lg font-normal leading-5 px-2">
               <div class="uppercase">Манхэттен</div>
               <div>beauty bar</div>
             </div>
           </div>
-
-          <ul class="sm:flex hidden">
-            <li class="pr-3 hover:text-mediumbrown cursor-pointer"><a href="#"></a>О нас</li>
-            <li class="pr-3 hover:text-mediumbrown cursor-pointer"><a href="#"></a>Услуги</li>
-            <li class="pr-3 hover:text-mediumbrown cursor-pointer"><a href="#"></a>Прайс</li>
-            <li class="pr-3 hover:text-mediumbrown cursor-pointer"><a href="#"></a>Отзывы</li>
-            <li class="hover:text-mediumbrown hover:cursor-pointer"><a href="#"></a>Контакты</li>
+          <div class="burger-icon"><span></span></div>
+          <ul class="menu-body flex">
+            <li data-goto="#about" class="menu-link pr-3 hover:text-mediumbrown cursor-pointer"><a class="menu-link" href="#"></a>О нас</li>
+            <li data-goto=".price-section" class="menu-link pr-3 hover:text-mediumbrown cursor-pointer"><a href=""></a>Цены</li>
+            <li data-goto="" class="menu-link pr-3 hover:text-mediumbrown cursor-pointer"><a class="menu-link" href="#"></a>Отзывы</li>
+            <li data-goto="" class="menu-link hover:text-mediumbrown hover:cursor-pointer"><a class="menu-link" href="#"></a>Контакты</li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <section id="hero" class="swiper mySwiper">
+      <section id="hero" class="swiper mySwiper h-[90vh]">
         <ul class="p-0 m-0 swiper-wrapper">
           <li class="bg-cover bg-center md:text-left text-center swiper-slide" style="background-image: url(img/banner-3.jpg)">
             <div class="container h-full flex justify-start items-center">
@@ -89,13 +88,13 @@
 
       <section id="years15" class="py-20 years15-section relative">
         <div class="container">
-          <div class="flex justify-center items-center flex-wrap z-10 relative">
+          <div class="flex justify-center items-center flex-wrap z-[2] relative">
             <div class="md:w-1/2 w-full mb-10 md:mb-0 md:m-0 -m-36">
               <img class="rounded" alt="hero" src="img/promo-image.jpg" />
             </div>
-            <div class="md:w-1/2 pl-0 md:pl-8 flex flex-col md:items-start md:text-left items-center text-center text-lightbrown">
+            <div id="about" class="md:w-1/2 pl-0 md:pl-8 flex flex-col md:items-start md:text-left items-center text-center text-lightbrown">
               <p class="sm:text-5xl text-4xl font-medium mb-6">
-                На 3 этаже торгового центра Триумфальный находится маникюрный салон <strong>“Манхэттен beauty bar“.</strong>
+                На 3 этаже торгового центра "Триумфальный" находится маникюрный салон <strong>“Манхэттен beauty bar“.</strong>
               </p>
               <div class="flex my-4 justify-center">
                 <div class="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
@@ -110,10 +109,17 @@
         </div>
       </section>
 
-      <section class="py-20">
-        <div class="container text-center">
-          <h1 class="sm:text-5xl text-4xl font-medium mb-6">Наш принцип — ндивидуальный подход к каждому клиенту!</h1>
+      <section class="py-20 text-center">
+        <div class="container">
+          <h1 class="sm:text-5xl text-4xl font-medium mb-6">Наш принцип — индивидуальный подход к каждому клиенту!</h1>
         </div>
+        <button
+          data-goto=".price-section"
+          type="button"
+          class="menu-link mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+        >
+          Ознакомиться с ценами
+        </button>
       </section>
       <section id="features" class="text-lightbrown bg-center features-section">
         <div class="container py-20 text-center">
@@ -170,12 +176,12 @@
 
       <section id="price" class="price-section">
         <div class="container py-20 mx-auto">
-          <h1 class="sm:text-4xl text-2xl font-medium mb-4 text-center">Наши цены</h1>
+          <h1 class="sm:text-5xl text-4xl font-medium mb-4 text-center">Наши цены</h1>
           <div class="flex mt-6 justify-center">
             <div class="w-16 h-1 rounded-full bg-darkbrown inline-flex"></div>
           </div>
           <div class="flex flex-wrap justify-center">
-            <div class="p-4 w-full sm:w-1/2 xl:w-1/3 flex flex-col text-center items-center">
+            <div class="p-4 w-full md:w-1/2 xl:w-1/3 flex flex-col text-center items-center">
               <div>
                 <p class="text-xl font-semibold py-4">Маникюр и уход за руками</p>
               </div>
@@ -338,7 +344,7 @@
                 </li>
               </ul>
             </div>
-            <div class="p-4 w-full sm:w-1/2 xl:w-1/3 flex flex-col text-center items-center">
+            <div class="p-4 w-full md:w-1/2 xl:w-1/3 flex flex-col text-center items-center">
               <div>
                 <p class="text-xl font-semibold py-4">Педикюр и уход за ногами</p>
               </div>
@@ -616,7 +622,7 @@
       </section>
 
       <section id="promo-1" class="relative">
-        <div class="container justify-center items-center flex-wrap relative z-10">
+        <div class="container justify-center items-center flex-wrap relative z-[2]">
           <div class="flex flex-wrap w-full justify-center items-center">
             <!-- PROMO BOX #1 -->
             <div class="w-full md:w-1/2 md:pr-5">
@@ -624,7 +630,9 @@
                 <div class="text-darkbrown md:text-left text-center">
                   <h1 class="lg:text-5xl text-3xl font-medium mb-6">Будьте в курсе наших новостей, подписывайтесь</h1>
 
-                  <p class="lg:text-6xl text-4xl font-bold">@manhattan.bb</p>
+                  <a class="lg:text-6xl text-4xl font-bold hover:text-mediumbrown" href="https://www.instagram.com/manhattan.bb/" target="_blank"
+                    >@manhattan.bb</a
+                  >
                 </div>
               </div>
             </div>
@@ -675,10 +683,8 @@
 
       <section id="contacts" class="contacts-section py-20 promo-section relative">
         <div class="container">
-          <div class="flex md:flex-row-reverse justify-center items-center flex-wrap z-10 relative">
+          <div class="flex md:flex-row-reverse justify-center items-center flex-wrap z-[3] relative">
             <div class="md:w-1/2 w-full md:h-[50vh] mb-10 md:mb-0 md:m-0 -m-36">
-              <!-- <img class="rounded" alt="hero" src="img/promo-image.jpg" /> -->
-
               <script
                 type="text/javascript"
                 charset="utf-8"
@@ -715,6 +721,7 @@
 
       <section id="gallery" class="py-20">
         <div class="container">
+          <h1 class="sm:text-5xl text-4xl font-medium mb-6 text-center">Работы наших мастеров</h1>
           <div class="swiper gallery-swiper mx-auto">
             <div class="swiper-wrapper text-center">
               <div class="swiper-slide"><img src="img/gallery-1.jpg" alt="" /></div>
@@ -727,9 +734,42 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
+          <div class="text-center">
+            <h1 class="lg:text-5xl text-3xl font-medium mt-6 mb-3">Больше актуальных работ смотрите в нашем инстаграме:</h1>
+
+            <a class="lg:text-6xl text-4xl font-bold hover:text-mediumbrown" href="https://www.instagram.com/manhattan.bb/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i> manhattan.bb</a
+            >
+          </div>
         </div>
       </section>
     </main>
+    <footer class="text-lightbrown bg-darkbrown py-20">
+      <div class="container mx-auto flex items-center sm:flex-row flex-col">
+        <a
+          class="flex title-font font-medium items-center md:justify-start justify-center"
+          href="https://www.instagram.com/manhattan.bb/"
+          target="_blank"
+        >
+          <img src="img/logo-light.png" alt="" />
+          <!-- <div class="flex flex-col items-center justify-center">
+            <span class="ml-3 text-xl uppercase leading-5">Манхэттен</span><span class="ml-3 text-xl leading-5">beauty bar</span>
+          </div> -->
+        </a>
+        <p class="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-lightbrown sm:py-2 sm:mt-0 mt-4">© 2022 "Манхэттен beauty bar"</p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-xl md:text-2xl">
+          <a href="https://www.instagram.com/manhattan.bb/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a class="ml-3" href="https://api.whatsapp.com/send/?phone=79263948050">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a class="ml-3" href="tel:+79263948050">
+            <i class="fa-solid fa-square-phone"></i>
+          </a>
+        </span>
+      </div>
+    </footer>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <script src="./js/main.js"></script>

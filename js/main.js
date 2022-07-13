@@ -2,6 +2,11 @@ let scrollY;
 let headerHeight = document.querySelector(".header").clientHeight;
 let heroHeight = document.querySelector("#hero").clientHeight;
 
+const iconMenu = document.querySelector(".burger-icon");
+const menuBody = document.querySelector(".menu-body");
+
+const menuLinks = document.querySelectorAll(".menu-link[data-goto]");
+
 const swiper = new Swiper(".mySwiper", {
   pagination: {
     el: ".swiper-pagination",
@@ -47,3 +52,37 @@ function stickyMenu() {
 }
 
 window.addEventListener("scroll", stickyMenu);
+
+// burger menu
+
+iconMenu.addEventListener("click", () => {
+  iconMenu.classList.toggle("active");
+  menuBody.classList.toggle("active");
+});
+
+//smooth menu click
+
+if (menuLinks.length) {
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", onMenuLinkClick);
+  });
+}
+
+function onMenuLinkClick(e) {
+  e.preventDefault();
+  const menuLink = e.target;
+  if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+    const gotoBlock = document.querySelector(menuLink.dataset.goto);
+    const gotoBlockDistance = gotoBlock.getBoundingClientRect().top + window.scrollY - document.querySelector(".header").offsetHeight;
+
+    if (iconMenu.classList.contains("active")) {
+      iconMenu.classList.remove("active");
+      menuBody.classList.remove("active");
+    }
+
+    window.scrollTo({
+      top: gotoBlockDistance,
+      behavior: "smooth",
+    });
+  }
+}
