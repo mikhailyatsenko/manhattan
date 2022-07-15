@@ -5,34 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Манхэттен beauty bar</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
     <script src="https://kit.fontawesome.com/10ba46813f.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <header class="header absolute top-0 left-0 w-full text-lightbrown font-medium">
+    <header class="header relative w-full font-medium z-10">
       <div class="container">
-        <nav class="flex justify-between items-center md:py-4">
+        <nav class="flex justify-between items-center">
           <div class="flex items-center header-logo">
             <div class="menu-logo py-2">
               <a href="#"><img src="./img/logo.png" alt="logo" /></a>
             </div>
-            <div class="text-center text-darkbrown md:text-2xl text-lg font-normal leading-5 px-2">
-              <div class="uppercase">Манхэттен</div>
-              <div>beauty bar</div>
+            <div class="text-center text-darkbrown md:text-2xl text-lg font-normal px-2 cursor-default">
+              <div class="uppercase leading-4 md:leading-6">Манхэттен</div>
+              <div class="leading-5 md:leading-6">beauty bar</div>
             </div>
           </div>
           <div class="burger-icon"><span></span></div>
-          <ul class="menu-body flex">
+          <ul class="menu-body flex uppercase font-semibold">
             <li data-goto="#about" class="menu-link pr-3 hover:text-mediumbrown cursor-pointer"><a class="menu-link" href="#"></a>О нас</li>
             <li data-goto=".price-section" class="menu-link pr-3 hover:text-mediumbrown cursor-pointer"><a href=""></a>Цены</li>
-            <li data-goto="" class="menu-link pr-3 hover:text-mediumbrown cursor-pointer"><a class="menu-link" href="#"></a>Отзывы</li>
-            <li data-goto="" class="menu-link hover:text-mediumbrown hover:cursor-pointer"><a class="menu-link" href="#"></a>Контакты</li>
+            <li data-goto="#special" class="menu-link pr-3 hover:text-mediumbrown cursor-pointer"><a class="menu-link" href="#"></a>Акции</li>
+            <li data-goto="#contacts" class="menu-link hover:text-mediumbrown hover:cursor-pointer"><a class="menu-link" href="#"></a>Контакты</li>
           </ul>
         </nav>
       </div>
@@ -40,34 +53,58 @@
     <main>
       <section id="hero" class="swiper mySwiper h-[90vh]">
         <ul class="p-0 m-0 swiper-wrapper">
-          <li class="bg-cover bg-center md:text-left text-center swiper-slide" style="background-image: url(img/banner-3.jpg)">
+          <li class="bg-cover bg-center md:text-left text-center swiper-slide" style="background-image: url(img/slide-1.jpg)">
             <div class="container h-full flex justify-start items-center">
-              <div id="slide-content" class="max-w-4xl py-16">
-                <h1 class="2xl:text-8xl xl:text-7xl text-6xl text-darkbrown drop-shadow-sm font-medium">
-                  Первое посещение: <span class="block">-маникюр 500₽</span><span class="block">-педикюр 1500₽</span>
+              <div id="slide-content-first-visit" class="max-w-4xl py-16">
+                <h1 class="2xl:text-7xl xl:text-6xl text-4xl text-lightbrown drop-shadow-sm font-medium anim-from-top">
+                  <span class="font-semibold"> Первое посещение: </span><span class="block mt-2">-маникюр 500₽</span
+                  ><span class="block">-педикюр 1500₽</span>
                 </h1>
-
-                <button
-                  type="button"
-                  class="text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-base px-5 py-2.5 text-center my-5"
-                >
-                  Побробнее об акциях
-                </button>
+                <div class="anim-from-top anim-delay">
+                  <button
+                    data-goto="#special"
+                    type="button"
+                    class="menu-link text-lightbrown hover:text-darkbrown border border-lightbrown hover:bg-lightbrown focus:ring-4 focus:outline-none focus:ring-darkbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+                  >
+                    Побробнее об акциях
+                  </button>
+                </div>
               </div>
             </div>
           </li>
-          <li class="bg-cover bg-center md:text-left text-center swiper-slide" style="background-image: url(img/banner-3.jpg)">
+          <li class="bg-cover bg-center text-center swiper-slide" style="background-image: url(img/slide-3.jpg)">
             <div class="container h-full flex justify-start items-center">
-              <div id="slide-content2" class="max-w-4xl py-16">
-                <h1 class="2xl:text-8xl xl:text-7xl text-6xl text-darkbrown drop-shadow-sm font-medium">
-                  Первое посещение: <span class="block">-маникюр 500₽</span><span class="block">-педикюр 1500₽</span>
+              <div id="slide-content-dr" class="max-w-4xl py-16 mx-auto">
+                <h1 class="2xl:text-7xl xl:text-6xl text-4xl text-lightbrown drop-shadow-sm font-medium anim-from-top">
+                  Дарим скидку <span class="font-semibold">20% в День Рождения, а так же за 2 дня до и после. </span>
                 </h1>
-                <button
-                  type="button"
-                  class="text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-base px-5 py-2.5 text-center my-5"
-                >
-                  Побробнее об акциях
-                </button>
+                <div class="anim-from-top anim-delay">
+                  <button
+                    data-goto="#special"
+                    type="button"
+                    class="menu-link text-lightbrown hover:text-darkbrown border border-lightbrown hover:bg-lightbrown focus:ring-4 focus:outline-none focus:ring-darkbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+                  >
+                    Побробнее об акциях
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="bg-cover bg-center md:text-left text-center swiper-slide" style="background-image: url(img/slide-2.jpg)">
+            <div class="container h-full flex justify-start items-center">
+              <div id="slide-content-friends" class="max-w-4xl py-16">
+                <h1 class="2xl:text-7xl xl:text-6xl text-4xl text-lightbrown drop-shadow-sm font-medium anim-from-top">
+                  Приводите своих друзей и получайте <span class="font-semibold">скидку в 200₽</span> за каждого нового клиента!
+                </h1>
+                <div class="anim-from-top anim-delay">
+                  <button
+                    data-goto="#special"
+                    type="button"
+                    class="menu-link text-lightbrown hover:text-darkbrown border border-lightbrown hover:bg-lightbrown focus:ring-4 focus:outline-none focus:ring-darkbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+                  >
+                    Побробнее об акциях
+                  </button>
+                </div>
               </div>
             </div>
           </li>
@@ -76,31 +113,36 @@
       </section>
       <section class="py-20 text-center">
         <div class="container text-center">
-          <h1 class="sm:text-5xl text-4xl font-medium mb-6">Вот уже 15 лет мы радуем своих клиентов внимательным и бережным отношением</h1>
-          <button
-            type="button"
-            class="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
-          >
-            Записаться
-          </button>
+          <h2 class="sm:text-5xl text-4xl font-medium mb-6 anim-from-bottom">
+            Вот уже 15 лет мы радуем своих клиентов внимательным и бережным отношением
+          </h2>
+          <div class="anim-from-bottom anim-delay">
+            <button
+              data-goto="#contacts"
+              type="button"
+              class="menu-link mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+            >
+              Записаться
+            </button>
+          </div>
         </div>
       </section>
 
       <section id="years15" class="py-20 years15-section relative">
-        <div class="container">
+        <div class="container" id="about">
           <div class="flex justify-center items-center flex-wrap z-[2] relative">
-            <div class="md:w-1/2 w-full mb-10 md:mb-0 md:m-0 -m-36">
-              <img class="rounded" alt="hero" src="img/promo-image.jpg" />
+            <div class="md:w-1/2 w-full mb-10 md:mb-0 md:m-0 -m-36 overflow-hidden">
+              <img class="rounded anim-from-right" alt="hero" src="img/promo-image.jpg" />
             </div>
-            <div id="about" class="md:w-1/2 pl-0 md:pl-8 flex flex-col md:items-start md:text-left items-center text-center text-lightbrown">
-              <p class="sm:text-5xl text-4xl font-medium mb-6">
+            <div class="overflow-hidden md:w-1/2 pl-0 md:pl-8 flex flex-col md:items-start md:text-left items-center text-center text-lightbrown">
+              <h3 class="sm:text-5xl text-4xl font-medium mb-6 anim-from-left">
                 На 3 этаже торгового центра "Триумфальный" находится маникюрный салон <strong>“Манхэттен beauty bar“.</strong>
-              </p>
-              <div class="flex my-4 justify-center">
+              </h3>
+              <div class="flex my-4 justify-center anim-from-left anim-delay">
                 <div class="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
               </div>
 
-              <p class="sm:text-xl text-lg">
+              <p class="sm:text-xl text-lg anim-from-left anim-delay">
                 В уютной атмосфере под любимый фильм и чашечку кофе Вам сделают любой вид маникюра и педикюра в исполнении мастеров высочайшего
                 класса: классический, аппаратный, комбинированный, моделирование искусственных ногтей и многое другое.
               </p>
@@ -111,66 +153,69 @@
 
       <section class="py-20 text-center">
         <div class="container">
-          <h1 class="sm:text-5xl text-4xl font-medium mb-6">Наш принцип — индивидуальный подход к каждому клиенту!</h1>
+          <h2 class="sm:text-5xl text-4xl font-medium mb-6">Наш принцип — индивидуальный подход к каждому клиенту!</h2>
         </div>
         <button
           data-goto=".price-section"
           type="button"
-          class="menu-link mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+          class="menu-link mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5 anim-from-bottom"
         >
           Ознакомиться с ценами
         </button>
       </section>
-      <section id="features" class="text-lightbrown bg-center features-section">
+      <section id="features" class="text-darkbrown bg-center features-section">
         <div class="container py-20 text-center">
           <div class="text-center mb-20">
-            <h1 class="sm:text-6xl text-2xl font-medium mb-4">Мы заинтересованы в том, чтобы Вы возвращались</h1>
-            <p class="text-xl leading-relaxed mx-auto">Поэтому стараемся обеспечить максимальный уровень комфорта по многим параметрам</p>
+            <h2 class="sm:text-5xl text-4xl font-medium mb-4">Мы заинтересованы в том, чтобы Вы возвращались</h2>
+            <p class="text-2xl leading-relaxed mx-auto">Поэтому стараемся обеспечить максимальный уровень комфорта по многим параметрам</p>
             <div class="flex mt-6 justify-center">
               <div class="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
             </div>
           </div>
           <div class="flex flex-wrap justify-center font-semibold">
-            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center">
-              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-lightbrown text-darkbrown mb-5 flex-shrink-0">
+            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center anim-from-bottom">
+              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
                 <i class="fa-solid fa-wand-magic-sparkles text-4xl"></i>
               </div>
               <div class="flex-grow">
-                <p class="leading-relaxed text-xl">Качественные современные материалы</p>
+                <h3 class="leading-relaxed text-xl">Качественные современные материалы</h3>
               </div>
             </div>
-            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center">
-              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-lightbrown text-darkbrown mb-5 flex-shrink-0">
+            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center anim-from-bottom">
+              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
                 <i class="fa-solid fa-pump-medical text-4xl"></i>
               </div>
               <div class="flex-grow">
-                <p class="leading-relaxed text-xl">100% стерильные инструменты</p>
+                <h3 class="leading-relaxed text-xl">100% стерильные инструменты</h3>
               </div>
             </div>
-            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center">
-              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-lightbrown text-darkbrown mb-5 flex-shrink-0">
+            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center anim-from-bottom">
+              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
                 <i class="fa-solid fa-thumbs-up text-4xl"></i>
               </div>
               <div class="flex-grow">
-                <p class="leading-relaxed text-xl">Безупречная работа мастеров</p>
+                <h3 class="leading-relaxed text-xl">Безупречная работа мастеров</h3>
               </div>
             </div>
 
-            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center">
-              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-lightbrown text-darkbrown mb-5 flex-shrink-0">
+            <div class="p-4 sm:w-1/2 lg:w-1/4 flex flex-col text-center items-center anim-from-bottom">
+              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-darkbrown text-lightbrown mb-5 flex-shrink-0">
                 <i class="fa-solid fa-hand-holding-dollar text-4xl"></i>
               </div>
               <div class="flex-grow">
-                <p class="leading-relaxed text-xl">Соотношение цены и качества</p>
+                <h3 class="leading-relaxed text-xl">Соотношение цены и качества</h3>
               </div>
             </div>
           </div>
-          <button
-            type="button"
-            class="mx-auto text-lightbrown hover:text-darkbrown border border-lightbrown hover:bg-lightbrown focus:ring-4 focus:outline-none focus:ring-darkbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
-          >
-            Записаться
-          </button>
+          <div class="anim-from-bottom anim-delay">
+            <button
+              data-goto="#contacts"
+              type="button"
+              class="menu-link mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
+            >
+              Записаться
+            </button>
+          </div>
         </div>
       </section>
 
@@ -180,10 +225,10 @@
           <div class="flex mt-6 justify-center">
             <div class="w-16 h-1 rounded-full bg-darkbrown inline-flex"></div>
           </div>
-          <div class="flex flex-wrap justify-center">
-            <div class="p-4 w-full md:w-1/2 xl:w-1/3 flex flex-col text-center items-center">
+          <div class="flex flex-wrap justify-center items-start">
+            <div class="p-4 w-full md:w-1/2 xl:w-1/3 flex flex-col text-center items-center anim-fade">
               <div>
-                <p class="text-xl font-semibold py-4">Маникюр и уход за руками</p>
+                <h3 class="text-xl font-semibold py-4">Маникюр и уход за руками</h3>
               </div>
 
               <ul class="w-full">
@@ -250,7 +295,7 @@
                     <div class="price-number"><h5 class="text-base">80₽</h5></div>
                   </div>
                 </li>
-                <li class="pricing">
+                <li class="pb-1">
                   <div class="text-left">Покрытие “Кошачий глаз» +300 р. к любому покрытию</div>
                 </li>
                 <li class="pricing-6-item">
@@ -344,9 +389,9 @@
                 </li>
               </ul>
             </div>
-            <div class="p-4 w-full md:w-1/2 xl:w-1/3 flex flex-col text-center items-center">
+            <div class="p-4 w-full md:w-1/2 xl:w-1/3 flex flex-col text-center items-center anim-fade">
               <div>
-                <p class="text-xl font-semibold py-4">Педикюр и уход за ногами</p>
+                <h3 class="text-xl font-semibold py-4">Педикюр и уход за ногами</h3>
               </div>
               <ul class="w-full">
                 <li class="pricing-6-item">
@@ -467,7 +512,7 @@
                   <div class="detail-price">
                     <div class="price-name"><h5 class="text-base">Полировка ногтей</h5></div>
                     <div class="price-dots"></div>
-                    <div class="price-number"><h5 class="text-base">200₽</h5></div>
+                    <div class="price-number"><h5 class="text-base">250₽</h5></div>
                   </div>
                 </li>
                 <li class="pricing-6-item">
@@ -479,9 +524,9 @@
                 </li>
               </ul>
             </div>
-            <div class="p-4 w-full xl:w-1/3 flex flex-col text-center items-center">
+            <div class="p-4 w-full xl:w-1/3 flex flex-col text-center items-center anim-fade">
               <div>
-                <p class="text-xl font-semibold py-4">Дополнительные услуги</p>
+                <h3 class="text-xl font-semibold py-4">Дополнительные услуги</h3>
               </div>
               <ul class="w-full">
                 <li class="pricing-6-item">
@@ -615,6 +660,61 @@
                     <div class="price-number"><h5 class="text-base">от&nbsp;400₽</h5></div>
                   </div>
                 </li>
+                <li class="pb-1">
+                  <div class="text-left font-semibold">Тридинг:</div>
+                </li>
+
+                <li class="pricing-6-item">
+                  <div class="detail-price">
+                    <div class="price-name"><h5 class="text-base">Тридинг бровей</h5></div>
+                    <div class="price-dots"></div>
+                    <div class="price-number"><h5 class="text-base">500₽</h5></div>
+                  </div>
+                </li>
+                <li class="pricing-6-item">
+                  <div class="detail-price">
+                    <div class="price-name"><h5 class="text-base">Полный тридинг лица</h5></div>
+                    <div class="price-dots"></div>
+                    <div class="price-number"><h5 class="text-base">1000₽</h5></div>
+                  </div>
+                </li>
+                <li class="pricing-6-item">
+                  <div class="detail-price">
+                    <div class="price-name"><h5 class="text-base">Тридинг одной зоны лица</h5></div>
+                    <div class="price-dots"></div>
+                    <div class="price-number"><h5 class="text-base">300₽</h5></div>
+                  </div>
+                </li>
+                <li class="pricing-6-item">
+                  <div class="detail-price">
+                    <div class="price-name"><h5 class="text-base">Тридинг подмышечных впадин</h5></div>
+                    <div class="price-dots"></div>
+                    <div class="price-number">
+                      <h5 class="text-base">500₽</h5>
+                    </div>
+                  </div>
+                </li>
+                <li class="pricing-6-item">
+                  <div class="detail-price">
+                    <div class="price-name"><h5 class="text-base">Тридинг ног (колен/полный)</h5></div>
+                    <div class="price-dots"></div>
+                    <div class="price-number"><h5 class="text-base">1500/2000₽</h5></div>
+                  </div>
+                </li>
+                <li class="pricing-6-item">
+                  <div class="detail-price">
+                    <div class="price-name"><h5 class="text-base">Тридинг рук (до локтя/полный)</h5></div>
+                    <div class="price-dots"></div>
+                    <div class="price-number"><h5 class="text-base">1000/1500₽</h5></div>
+                  </div>
+                </li>
+                <li class="pricing-6-item">
+                  <div class="detail-price">
+                    <div class="price-name"><h5 class="text-base">Тридинг пальцев</h5></div>
+                    <div class="price-dots"></div>
+                    <div class="price-number"><h5 class="text-base">150₽</h5></div>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -624,25 +724,25 @@
       <section id="promo-1" class="relative">
         <div class="container justify-center items-center flex-wrap relative z-[2]">
           <div class="flex flex-wrap w-full justify-center items-center">
-            <!-- PROMO BOX #1 -->
             <div class="w-full md:w-1/2 md:pr-5">
               <div class="md:py-24 py-16 md:pr-16">
                 <div class="text-darkbrown md:text-left text-center">
-                  <h1 class="lg:text-5xl text-3xl font-medium mb-6">Будьте в курсе наших новостей, подписывайтесь</h1>
+                  <h2 class="lg:text-5xl text-4xl font-medium mb-6 anim-from-right">Будьте в курсе наших новостей, подписывайтесь</h2>
 
-                  <a class="lg:text-6xl text-4xl font-bold hover:text-mediumbrown" href="https://www.instagram.com/manhattan.bb/" target="_blank"
+                  <a
+                    class="lg:text-6xl text-4xl font-bold hover:text-mediumbrown anim-from-right anim-delay"
+                    href="https://www.instagram.com/manhattan.bb/"
+                    target="_blank"
                     >@manhattan.bb</a
                   >
                 </div>
               </div>
             </div>
-            <!-- END PROMO BOX #1 -->
 
-            <!-- PROMO BOX #2 -->
-            <div class="w-full md:w-1/2 md:pl-5">
+            <div id="special" class="w-full md:w-1/2 md:pl-5">
               <div class="py-24 md:pl-16">
-                <div class="text-white md:text-left text-center">
-                  <h1 class="sm:text-5xl text-4xl font-medium mb-6">Cпециальные предложения</h1>
+                <div class="text-white md:text-left text-center anim-from-left">
+                  <h2 class="sm:text-5xl text-4xl font-medium mb-6">Специальные предложения</h2>
 
                   <p class="sm:text-xl text-lg mb-2"><strong>Первое посещение:</strong></p>
                   <p class="sm:text-xl text-lg">Маникюр: 500₽</p>
@@ -664,35 +764,33 @@
                 </div>
               </div>
             </div>
-            <!-- END PROMO BOX #2 -->
           </div>
-          <!-- End row -->
         </div>
       </section>
 
       <section class="py-20 text-center">
         <div class="container text-center">
-          <button
+          <!-- <button
             type="button"
             class="mx-auto text-darkbrown hover:text-lightbrown border border-darkbrown hover:bg-darkbrown focus:ring-4 focus:outline-none focus:ring-lightbrown font-medium rounded-sm text-2xl px-5 py-2.5 text-center my-5"
           >
             Записаться
-          </button>
+          </button> -->
         </div>
       </section>
 
       <section id="contacts" class="contacts-section py-20 promo-section relative">
         <div class="container">
           <div class="flex md:flex-row-reverse justify-center items-center flex-wrap z-[3] relative">
-            <div class="md:w-1/2 w-full md:h-[50vh] mb-10 md:mb-0 md:m-0 -m-36">
+            <div class="md:w-1/2 w-full mb-10 md:mb-0 md:m-0 -m-36">
               <script
                 type="text/javascript"
                 charset="utf-8"
                 async
-                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0bb6137aa67dfa51ecb5386214ee78c3ad3c3051fc6c4d910ab82bb21c6200f9&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0bb6137aa67dfa51ecb5386214ee78c3ad3c3051fc6c4d910ab82bb21c6200f9&amp;width=100%&amp;height=50vh&amp;lang=ru_RU&amp;scroll=false"
               ></script>
             </div>
-            <div class="md:w-1/2 pl-0 md:pr-8 flex flex-col md:items-start md:text-left items-center text-center text-lightbrown">
+            <div class="md:w-1/2 pl-0 md:pr-8 flex flex-col md:items-start md:text-left items-center text-center text-lightbrown anim-from-right">
               <h1 class="sm:text-6xl text-5xl font-medium">Записаться</h1>
 
               <div class="flex my-4 justify-center">
@@ -706,14 +804,16 @@
                 <i class="fa-brands fa-viber"></i>
               </p>
 
-              <h1 class="sm:text-5xl text-4xl font-medium pt-8">Как нас найти:</h1>
+              <h2 class="sm:text-5xl text-4xl font-medium pt-8">Как нас найти:</h2>
               <div class="flex my-4 justify-center">
                 <div class="w-16 h-1 rounded-full bg-lightbrown inline-flex"></div>
               </div>
               <p class="sm:text-xl text-lg">Мы находимся по адресу:</p>
-              <p class="sm:text-xl text-lg">г. Москва, ул. Вавилова 66 (м. Профсоюзная, м. Университет)</p>
-
+              <p class="sm:text-xl text-lg">г. Москва, ул. Вавилова 66 (м.&nbsp;Профсоюзная, м.&nbsp;Университет)</p>
               <p class="sm:text-xl text-lg">ТЦ "Триумфальный", 3 этаж</p>
+
+              <p class="sm:text-xl text-lg pt-2 font-semibold">Время работы:</p>
+              <p class="sm:text-xl text-lg">Пн — Вс: 10:00 — 21:00</p>
             </div>
           </div>
         </div>
@@ -721,8 +821,8 @@
 
       <section id="gallery" class="py-20">
         <div class="container">
-          <h1 class="sm:text-5xl text-4xl font-medium mb-6 text-center">Работы наших мастеров</h1>
-          <div class="swiper gallery-swiper mx-auto">
+          <h2 class="sm:text-5xl text-4xl font-medium mb-6 text-center">Работы наших мастеров</h2>
+          <div class="swiper gallery-swiper mx-auto anim-fade">
             <div class="swiper-wrapper text-center">
               <div class="swiper-slide"><img src="img/gallery-1.jpg" alt="" /></div>
               <div class="swiper-slide"><img src="img/gallery-2.jpg" alt="" /></div>
@@ -734,8 +834,8 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
-          <div class="text-center">
-            <h1 class="lg:text-5xl text-3xl font-medium mt-6 mb-3">Больше актуальных работ смотрите в нашем инстаграме:</h1>
+          <div class="text-center anim-from-bottom anim-delay">
+            <h3 class="lg:text-4xl text-3xl font-medium mt-6 mb-3">Больше актуальных работ смотрите в нашем инстаграме:</h3>
 
             <a class="lg:text-6xl text-4xl font-bold hover:text-mediumbrown" href="https://www.instagram.com/manhattan.bb/" target="_blank"
               ><i class="fa-brands fa-instagram"></i> manhattan.bb</a

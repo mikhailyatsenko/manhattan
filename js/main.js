@@ -7,16 +7,19 @@ const menuBody = document.querySelector(".menu-body");
 
 const menuLinks = document.querySelectorAll(".menu-link[data-goto]");
 
+const animItems = document.querySelectorAll("[class*='anim-']");
+const animStart = 4;
+
 const swiper = new Swiper(".mySwiper", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
     dynamicBullets: true,
   },
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 });
 
 var swiper2 = new Swiper(".gallery-swiper", {
@@ -37,7 +40,7 @@ var swiper2 = new Swiper(".gallery-swiper", {
 });
 
 function stickyMenu() {
-  scrollY = window.pageYOffset;
+  scrollY = window.scrollY;
   if (scrollY > headerHeight) {
     document.querySelector(".header").classList.add("fixed");
   } else {
@@ -85,4 +88,31 @@ function onMenuLinkClick(e) {
       behavior: "smooth",
     });
   }
+}
+
+//scroll animation
+if (animItems.length) {
+  window.addEventListener("scroll", animOnScroll);
+  function animOnScroll() {
+    animItems.forEach((animItem) => {
+      const animItemHeight = animItem.offsetHeight;
+      const animItemOffset = animItem.getBoundingClientRect().top + window.scrollY;
+
+      let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+      if (animItemHeight > window.innerHeight) {
+        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+      }
+
+      if (window.scrollY > animItemOffset - animItemPoint && window.scrollY < animItemOffset + animItemHeight) {
+        animItem.classList.add("animated");
+      } else {
+        if (animItem.classList.contains("animate-always")) {
+          animItem.classList.remove("animated");
+        }
+      }
+    });
+  }
+
+  setTimeout(animOnScroll, 300);
 }
